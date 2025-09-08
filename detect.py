@@ -30,9 +30,9 @@ def detect_objects(frame, model, labels, conf_thresh=0.35):
 
     for r in results:
         for box in r.boxes:
-            conf = float(box.conf) #checks confidence of veery detection and only considers it when above 0.35
+            conf = float(box.conf) #checks confidence of every detection and only considers it when above 0.35
             cls = int(box.cls)
-            name = r.names.get(cls, "unknown")
+            name = r.names.get(cls, "unknown") #gets the objects that have been detected
             if conf > conf_thresh and name in labels:
                 found.add(name)
     return found
