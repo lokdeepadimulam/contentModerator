@@ -40,6 +40,13 @@ def detect_objects(frame, model, labels, conf_thresh=0.35):
 
 #Main code snippet that calls other functions
 def check_video(video_path):
+
+    print("Agent Plan:")
+    print("1) Extract a keyframe from the video")
+    print("2) Detect prohibited objects using YOLO models")
+    print("3) Compare detected objects against prohibited list")
+    print("4) Report flagged or safe status\n")
+
     print(f"Checking video: {video_path}")
 
     # Load models
